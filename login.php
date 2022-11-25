@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <title>Cadastro</title>
+    <title> </title>
 </head>
 <body class="bg-[#150E2B]">
 
@@ -22,51 +22,45 @@
             <div class="logo-title">Math Solver</div>
 
             <div class="flex items-center justify-center h-full">
-                <form name="form-login" class="login-form flex flex-col gap-4 items-center" method="POST">
+            <form name="form-login" class="login-form flex flex-col gap-4 items-center" method="POST">
                     <input type="text" name="email" placeholder="E-mail">
                     <input type="password" name="senha" placeholder="Senha">
-                    <input type="password" name="csenha" placeholder="Confirmar senha">
-                    <button onsubmit="" class="card bg-[#150E2B] text-white w-fit">Cadastro</button>
+                    <a href="cadastro.php">Ainda não é incrito cadastre-se</a>
+
+                    <button onsubmit="" class="card bg-[#150E2B] text-white w-fit">Login</button>
                 </form>
             </div>
 
             <?php
-                //conexão com o banco
-
-                
-
-                if(isset($_POST['email'])){
-
-                    $login = $_POST['email'];
-                    $senha = $_POST['senha'];
-                    $csenha = $_POST['csenha'];
-
+                if(isset($_POST["email"])){   
                     
-                        if($login!='' && $senha!=''){
-                            if($senha == $csenha){
-                        $servidor   = "localhost"; 
+                    session_start();
+
+                    $login = $_POST["email"];
+                    $senha = $_POST["senha"];
+
+                    $servidor   = "localhost"; 
                         $usuario_bd = "root";
                         $senha_bd   = "1234";
                         $nome_bd    = "math";
 
                         $conexao_bd = new mysqli($servidor, $usuario_bd, $senha_bd, $nome_bd );
 
-                        
+                    $sql = "SELECT email FROM USUARIOS WHERE email =  '$login' AND SENHA = '$senha'"; 
 
-                        $sql = "INSERT INTO usuarios (email, senha) VALUES ('$login','$senha')";
-                        mysqli_query($conexao_bd, $sql);
-                            }else{
-                                echo("as senhas devem ser iguais");
+                    $result= mysqli_query ($conexao_bd, $sql);
+                        if (mysqli_num_rows($result) > 0){
+                            $_SESSION['logado']= true;
+                            echo("logado");
+                            header ("location: home.html");
                             }
-                        }
-                        else{
-                            echo("insira valores validos");
-                        }
-                    }
+                        else{ 
+                            unset($_SESSION['logado']); 
+                            echo("invalido");
+                            header ("location: login.php");
+                            }  
+                }                       
             ?>
-
-
-
         </div>
     </div>
     

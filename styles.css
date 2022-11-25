@@ -2,6 +2,7 @@
     box-sizing: border-box;
     font-family: "Outfit";
     font-size: 1rem;
+    color: white;
 }
 
 input:focus {
@@ -13,6 +14,12 @@ input:focus {
     padding-top: 0;
     font-size: 4rem;
     color: white;
+}
+
+.title {
+    font-size: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .login-form input {
@@ -30,6 +37,54 @@ input:focus {
     margin-right: 2rem;
 }
 
-h2{
-    color: white;
+.spotBox {
+    padding: 1rem;
+    width: 33%;
+}
+
+.spot {
+    
+    background: #3d2979;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: .5rem;
+    gap: .5rem;
+    border-radius: 5px;
+}
+
+.spot img {
+    border-radius: 5px;
+}
+
+.descricao {
+    font-size: .8rem;
+    text-align: center;
+    color: #e0e0e0;
+    padding-bottom: .5rem;
+}
+
+button.emprestar {
+    display: flex;
+    justify-content: center;
+    padding: 0rem 1rem;
+    max-width: 80%;
+    border-radius: 5px;
+    background: green;
+    font-weight: 500;
+}
+
+button.excluir {
+    display: flex;
+    justify-content: center;
+    padding: 0rem 1rem;
+    max-width: 80%;
+    border-radius: 5px;
+    background-color: darkred;
+    font-weight: 500;
+}
+
+input[type="submit"] {
+    background: #271a4e;
+    padding: 0.2rem 2rem;
 }
