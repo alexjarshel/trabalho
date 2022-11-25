@@ -28,7 +28,12 @@
 
 <h1 class="text-[2rem] text-white">Volume</h1>
 
-<h1 class="text-[2rem] text-white">Em Breve</h1>
+<h1 class="text-[2rem] text-white"><a href="volume/piramide.php">Piramide</a><br></h1>
+<h1 class="text-[2rem] text-white"><a href="volume/Cone.php">Cone</a><br></h1>
+<h1 class="text-[2rem] text-white"><a href="volume/Cilindro.php">Cilindro</a><br></h1>
+<h1 class="text-[2rem] text-white"><a href="volume/Esfera.php">Esfera</a><br></h1>
+<h1 class="text-[2rem] text-white"><a href="volume/Cubo.php">Cubo</a><br></h1>
+<h1 class="text-[2rem] text-white"><a href="volume/Prisma.php">Prisma</a><br></h1>
 
     
   
