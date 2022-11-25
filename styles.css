@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    font-family: "Outfit";
+    font-size: 1rem;
+}
+
+input:focus {
+    border: none;
+}
+
+.logo-title {
+    padding: 1.5rem;
+    padding-top: 0;
+    font-size: 4rem;
+    color: white;
+}
+
+.login-form input {
+    padding: .5rem 2rem;
+    border-radius: 5px;
+}
+
+.login-form button {
+    padding: .5rem 2rem;
+    border-radius: 5px;
+}
+
+.bordas {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+h2{
+    color: white;
+}
